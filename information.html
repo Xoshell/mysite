@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information Page</title>
+    <title>Welcome to My Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            display: flex;
+            display: block;
             align-items: center;
             justify-content: center;
             height: 100vh;
         }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
         .container {
             text-align: center;
-            max-width: 600px;
+            display: block;
             padding: 2rem;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,6 +31,10 @@
         }
         h1 {
             color: #333;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            color: #fff;
             margin-bottom: 1rem;
         }
         p {
@@ -49,11 +59,17 @@
 </head>
 <body>
 
+<header>
+    <h2>Information Page</h2>
+    <a href="index.html" style="color: #fff; text-decoration: underline;">Back to Main page</a>
+</header>
+	
 <div class="container">
-    <h1>Information Page</h1>
-    <p>Welcome to my page. This page was made to find commonly used things in one place.</p>
-    <a href="index.html" class="button">Return to Home</a>
+    <p>Welcome to my page. This page was made to show some of the interesting stuff from my life.</p>
+	<p>In the gallery you can find main gallery consisting of some interesting photos i found somewhere on the internet, then you can find a Fallout gallery where I want to post my camp build from the game Fallout 76.</p>
+	<p>In the links section you can find useful software from various websites.</p>
 </div>
 
 </body>
+    
 </html>
