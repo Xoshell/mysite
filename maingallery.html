@@ -83,23 +83,35 @@
 </header>
 
 <!-- Image Gallery Section -->
-<section id="gallery" class="gallery"></section>
+
+<section class="gallery" id="gallery"></section>
 
 <script>
-fetch("gallerydata.json")
-  .then(res => res.json())
-  .then(images => {
-    if (!res.ok) throw new Error("Failed to load gallerydata.json: " + res.status);
-    const gallery = document.getElementById("gallery");
-    images.forEach(src => {
-      const div = document.createElement("div");
-      div.className = "gallery-item";
-      div.innerHTML = `<img src="${src}" alt="" loading="lazy" onclick="openLightbox('${src}')">`;
-      gallery.appendChild(div);
-    });
-  });
-</script>
+const images = [
+  "Canon/11N2025/20251103180910_IMG_6962.JPG",
+  "Canon/11N2025/20251105122103_IMG_7040.JPG",
+  "Canon/11N2025/20251105125520_IMG_7064.JPG",
+  "Canon/11N2025/20251103180910_IMG_6962.JPG",
+    "Canon/11N2025/20251105122103_IMG_7040.JPG",
+     "Canon/11N2025/20251105125520_IMG_7064.JPG" ,
+     "Canon/11N2025/20251105122435_IMG_7042.JPG" , 
+     "Canon/11N2025/20251105124701_IMG_7058.JPG" ,
+     "Canon/11N2025/20251105122132_IMG_7041.JPG" ,
+     "Canon/11N2025/20251105130253_IMG_7076.JPG"  ,
+     "Canon/11N2025/20251105130322_IMG_7078.JPG"  ,
+     "Canon/11N2025/20251105131505_IMG_7085.JPG"  , 
+     "Canon/11N2025/20251105132933_IMG_7107.JPG" ,
+     "Canon/11N2025/20251105133940_IMG_7115.JPG" 
+];
 
+const gallery = document.getElementById("gallery");
+images.forEach(src => {
+  const item = document.createElement("div");
+  item.className = "gallery-item";
+  item.innerHTML = `<img src="${src}" alt="Photo" loading="lazy" onclick="openLightbox('${src}')">`;
+  gallery.appendChild(item);
+});
+</script>
 
 <!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
