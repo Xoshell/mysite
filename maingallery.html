@@ -86,7 +86,7 @@
 <section id="gallery" class="gallery"></section>
 
 <script>
-fetch("images.json")
+fetch("gallery-data.json")
   .then(res => res.json())
   .then(images => {
     const gallery = document.getElementById("gallery");
