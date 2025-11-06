@@ -89,6 +89,8 @@
 fetch("gallerydata.json")
   .then(res => res.json())
   .then(images => {
+    console.log("Current page:", window.location.href);
+    console.log("Trying image:", src);
     const gallery = document.getElementById("gallery");
     images.forEach(src => {
       const div = document.createElement("div");
