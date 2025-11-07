@@ -83,19 +83,33 @@
 </header>
 
 <!-- Image Gallery Section -->
-<section class="gallery">
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251103180910_IMG_6962.JPG" alt="alt codes for greek alphabet" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105122103_IMG_7040.JPG" alt="PEBCEK" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105125520_IMG_7064.JPG" alt="Mountain" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105122435_IMG_7042.JPG" alt="Mountain" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105124701_IMG_7058.JPG" alt="Mountain" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105122132_IMG_7041.JPG" alt="cat" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105130253_IMG_7076.JPG" alt="cnc" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105130322_IMG_7078.JPG" alt="robot" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105131505_IMG_7085.JPG" alt="robot2" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105132933_IMG_7107.JPG" alt="goat" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img loading="lazy" src="Canon/11N2025/20251105133940_IMG_7115.JPG" alt="pcb" onclick="openLightbox(this.src)"></div>
-</section>
+
+<section class="gallery" id="gallery"></section>
+
+<script>
+const images = [
+    "./Canon/11N2025/20251103180910_IMG_6962.JPG",
+    "./Canon/11N2025/20251105122103_IMG_7040.JPG",
+    "./Canon/11N2025/20251105125520_IMG_7064.JPG",
+    "./Canon/11N2025/20251105125228_IMG_7063.JPG",
+    "./Canon/11N2025/20251105122435_IMG_7042.JPG", 
+    "./Canon/11N2025/20251105124701_IMG_7058.JPG",
+    "./Canon/11N2025/20251105122132_IMG_7041.JPG",
+    "./Canon/11N2025/20251105130253_IMG_7076.JPG",
+    "./Canon/11N2025/20251105130322_IMG_7078.JPG",
+    "./Canon/11N2025/20251105131505_IMG_7085.JPG", 
+    "./Canon/11N2025/20251105132933_IMG_7107.JPG",
+    "./Canon/11N2025/20251105133940_IMG_7115.JPG" 
+];
+
+const gallery = document.getElementById("gallery");
+images.forEach(src => {
+  const item = document.createElement("div");
+  item.className = "gallery-item";
+  item.innerHTML = `<img src="${src}" alt="Photo" loading="lazy" onclick="openLightbox('${src}')">`;
+  gallery.appendChild(item);
+});
+</script>
 
 <!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
