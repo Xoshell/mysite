@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <style>
+        @font-face {
+            font-family: JBNF; /* set name */
+            src: url(jetbrainsnf.ttf); /* url of the font */
+        }   
         body {
-            font-family: Arial, sans-serif;
+            font-family: JBNF;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -82,20 +86,31 @@
     <a href="gallery.html" style="color: #fff; text-decoration: underline;">Back to Gallery</a>
 </header>
 
-<!-- Image Gallery Section -->
-<section class="gallery">
-    <div class="gallery-item"><img src="Fotky/greek.jpeg" alt="alt codes for greek alphabet" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/error.jpg" alt="PEBCEK" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/mountain2.jpg" alt="Mountain" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/mountain3.jpg" alt="Mountain" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/mountain4.jpg" alt="Mountain" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/cat.jpg" alt="cat" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/cnc.jpg" alt="cnc" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/robot.jpg" alt="robot" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/robot2.jpg" alt="robot2" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/goat.jpg" alt="goat" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="Fotky/pcb.jpg" alt="pcb" onclick="openLightbox(this.src)"></div>
-</section>
+<section class="gallery" id="gallery"></section>
+
+<script>
+const images = [
+    "./Fotky/greek.jpeg",
+    "./Fotky/error.jpg",
+    "./Fotky/mountain2.jpg",
+    "./Fotky/mountain3.jpg",
+    "./Fotky/mountain4.jpg",
+    "./Fotky/cat.jpg",
+    "./Fotky/cnc.jpg",
+    "./Fotky/robot.jpg",
+    "./Fotky/robot2.jpg",
+    "./Fotky/goat.jpg",
+    "./Fotky/pcb.jpg"
+];
+
+const gallery = document.getElementById("gallery");
+images.forEach(src => {
+  const item = document.createElement("div");
+  item.className = "gallery-item";
+  item.innerHTML = `<img src="${src}" alt="Photo" loading="lazy" onclick="openLightbox('${src}')">`;
+  gallery.appendChild(item);
+});
+</script>
 
 <!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
