@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" type="image/png" href="else/favicon.gif">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to My Website</title>
+
+    <script src="https://kit.fontawesome.com/d655d8e975.js" crossorigin="anonymous"></script>
+
     <style>
-        @font-face {
-            font-family: JBNF; /* set name */
-            src: url(jetbrainsnf.ttf); /* url of the font */
-        }   
         body {
-            font-family: JBNF;
+            font-family: Arial, sans-serif;
             display: block;
             align-items: center;
             justify-content: center;
             height: 20vh;
             margin: 1;
             background-color: #f4f4f4;
+            color: #333;
         }
         footer {
             background-color: #333;
@@ -65,23 +66,28 @@
             }
         }
         .button:hover {
-            background-color: #555;
+            background-color: #589;
         }
+
     </style>
 </head>
 <body>
 
-    <img src="Fotky/mountain.png" class="center" style="width:300px;"> 
+    <img src="Fotky/mountain.png" class="center" style="width:300px;">
 
-<div class="container">
-    <h1>Welcome to My Website</h1>
-    <p>Click the buttons below to view sections of this page.</p>
-    <a href="gallery.html" class="button">Gallery</a>
-    <a href="information.html" class="button">Information</a>
-    <a href="links.html" class="button">Links</a>
-    <a href="https://beta.aurelus.uk" class="button">BetaSite</a>
-</div>
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>Click the buttons below to view sections of this page.</p>
+        <a href="gallery.html" class="button">Gallery
+            <i class="fa-solid fa-camera"></i>
+        </a>
+        <a href="information.html" class="button">Information
+            <i class="fa-solid fa-circle-info"></i>
+        </a>
+        <a href="links.html" class="button">Links
+            <i class="fa-regular fa-gem"></i>
+        </a>
+    </div>
 
 </body>
-    
 </html>

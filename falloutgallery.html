@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" type="image/png" href="else/favicon.gif">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <style>
-        @font-face {
-            font-family: JBNF; /* set name */
-            src: url(jetbrainsnf.ttf); /* url of the font */
-        }   
         body {
-            font-family: JBNF;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -93,14 +90,26 @@
 </header>
 
 <!-- Image Gallery Section -->
-    <p2>Island</p2>   <br>
-<section class="gallery">
-    <div class="gallery-item"><img src="fallout/Island/island1.png" alt="island1" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="fallout/Island/island2.png" alt="island2" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="fallout/Island/island3.png" alt="island3" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="fallout/Island/island4.png" alt="island4" onclick="openLightbox(this.src)"></div>
-    <div class="gallery-item"><img src="fallout/Island/island5.png" alt="island5" onclick="openLightbox(this.src)"></div>
-</section>
+
+<section class="gallery" id="gallery"></section>
+
+<script>
+const images = [
+    "./fallout/Island/island1.png",
+    "./fallout/Island/island2.png",
+    "./fallout/Island/island3.png",
+    "./fallout/Island/island4.png",
+    "./fallout/Island/island5.png"
+];
+
+const gallery = document.getElementById("gallery");
+images.forEach(src => {
+  const item = document.createElement("div");
+  item.className = "gallery-item";
+  item.innerHTML = `<img src="${src}" alt="Photo" loading="lazy" onclick="openLightbox('${src}')">`;
+  gallery.appendChild(item);
+});
+</script>
 
 <!-- Lightbox Modal -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
